@@ -1,0 +1,14 @@
+Input: 3600
+Output: 60.000000 minute(s) and 1.000000 hour(s)
+
+Input: 10
+Output: 0.166667 minute(s) and 0.002778 hour(s)
+
+Input: 200
+Output: 3.333333 minute(s) and 0.055556 hour(s)
+
+Input: 100000000
+Output: 1666666.625000 minute(s) and 27777.777344 hour(s)
+
+Input: 4294967296
+Output: 71582788.266667 minute(s) and 1193046.471111 hour(s)

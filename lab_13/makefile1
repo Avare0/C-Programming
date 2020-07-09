@@ -1,0 +1,29 @@
+
+CC = gcc
+CFLAGS = -std=c99 -pedantic -Wall -Werror -g3 -c
+SOURCES = \
+	main.c \
+	cdio.c \
+	func.c
+LIBS = libcdio.so  libfunc.so
+LDFLAGS = -shared -fPIC
+OBJECTS = $(SOURCES:.c=.o)
+HEADER_DIR = -Iproject/includes
+COMP_FILES = main.o cdio.o func.o
+all: app.out
+
+app.out: $(OBJECTS) $(LIBS)
+	$(CC) $(COMP_FILES) $(LDFLAGS) -o app.out
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(HEADER_DIR) $<
+
+libfunc.so: func.o
+	ar rcs libfunc.so func.o
+
+libcdio.so: cdio.o
+	ar rcs libcdio.so cdio.o
+
+
+clean:
+	rm *.out *.o *.so

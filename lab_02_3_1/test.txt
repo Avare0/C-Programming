@@ -1,0 +1,11 @@
+Input: 256 128
+Input: 128
+
+Input: 20 10
+Output: 10
+
+Input: 30 18
+Output: 6
+
+Input: 65535 65530
+Output: 5
